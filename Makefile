@@ -29,8 +29,7 @@ arm:
 	${MAKE} build TARGETOS=linux TARGETARCH=arm64
 
 image:
-	docker build . -t ${REGISTRY}/${USER}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} --build-arg CGO_ENABLED=${CGO_ENABLED} --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}
+	docker build . -t ${USER}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} --build-arg CGO_ENABLED=${CGO_ENABLED} --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}
 
 clean: 
-	rm -rf kbot
-  docker rmi ${REGISTRY}/${USER}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
+  docker rmi ${USER}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
