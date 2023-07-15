@@ -32,4 +32,4 @@ image:
 	docker build . -t ${USER}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} --build-arg CGO_ENABLED=${CGO_ENABLED} --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}
 
 clean: 
-  docker rmi ${USER}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
+  docker rmi -t ${USER}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
